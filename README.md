@@ -1,0 +1,1 @@
+## Este proyecto fue creado con la finalidad de aportar los conocimientos suficientes sobre el tema de Mockito a prospectos a realizar pruebas unitarias.
