@@ -7,7 +7,7 @@ public class CalculadoraInflacionImp implements IInflacion{
 
     @Override
     public Double calcularInflaccion(Integer yearOfStart, Integer now) {
-        Double inflacion = Double.valueOf(0);
+        double inflacion = 0;
         for (int i=yearOfStart; i< now; i++){
             inflacion += 1.2;
         }

@@ -2,35 +2,40 @@ package com.neoris.calculadora.service;
 
 import com.neoris.calculadora.exceptions.NullException;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CalculadoraService {
-    
-    @Autowired
-    private IInflacion calculadoraInflacion;
 
+    private static final String ERROR = "Los numeros tienen que ser diferentes a null";
+
+    private final IInflacion calculadoraInflacion;
+
+    public CalculadoraService(CalculadoraInflacionImp calculadoraInflacion){
+        this.calculadoraInflacion = calculadoraInflacion;
+    }
 
     public Float suma(Float numeroUno, Float numeroDos){
         if(isNull(numeroUno) || isNull(numeroDos))
-            throw new NullException("Los numeros tienen que ser diferentes a null");
+            throw new NullException(ERROR);
         return Float.sum(numeroUno, numeroDos);
     }
 
     public Float resta(Float numeroUno, Float numeroDos){
         if(isNull(numeroUno) || isNull(numeroDos))
-            throw new NullException("Los numeros tienen que ser diferentes a null");
+            throw new NullException(ERROR);
         return numeroUno-numeroDos;
     }
 
     public Float division(Float numeroUno, Float numeroDos){
         if(isNull(numeroUno) || isNull(numeroDos))
-            throw new NullException("Los numeros tienen que ser diferentes a null");
+            throw new NullException(ERROR);
         return numeroUno/numeroDos;
     }
 
     public Float multiplicacion(Float numeroUno, Float numeroDos){
         if(isNull(numeroUno) || isNull(numeroDos))
-            throw new NullException("Los numeros tienen que ser diferentes a null");
+            throw new NullException(ERROR);
         return numeroUno*numeroDos;
     }
 
